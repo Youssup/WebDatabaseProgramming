@@ -1,3 +1,5 @@
+const { Router } = require("express");
+
 const users = [
     {
         userID: 1,
@@ -19,6 +21,6 @@ const users = [
     }
 ]
 
-let getUsers = () => users;fd
+let getUsers = () => users;
 
-module.exports = { getUsers }
+module.exports = Router

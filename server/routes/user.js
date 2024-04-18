@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/getUsers', (req, res) => {
     try {
         const users = User.getUsers();
         res.send(users);
@@ -11,3 +11,5 @@ router.get('/', (req, res) => {
         res.status(500).send({message: err.message});
     }
 })
+
+module.exports
