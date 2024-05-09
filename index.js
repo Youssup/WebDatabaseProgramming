@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
-const userRouter = require('./server/routes/user');
-
 app.use(express.json());
+const userRouter = require('./server/routes/user');
+const eventRouter = require('./server/routes/event');
+
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*")
@@ -12,6 +13,7 @@ app.use(function(req, res, next) {
 })
 
 app.use('/user', userRouter)
+app.use('/event', eventRouter)
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
